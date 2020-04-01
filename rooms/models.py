@@ -80,7 +80,7 @@ class Room(core_models.TimeStampedModel):
     host = models.ForeignKey(
         "users.User", on_delete=models.CASCADE
     )  # 문자열로 표기할 경우 모델을 임포트할 필요가 없다.
-    roo_type = models.ForeignKey("RoomType", on_delete=models.SET_NULL, null=True)
+    room_type = models.ForeignKey("RoomType", on_delete=models.SET_NULL, null=True)
     amenities = models.ManyToManyField("Amenity", blank=True)
     facilities = models.ManyToManyField("Facility", blank=True)
     hose_rules = models.ManyToManyField("HouseRule", blank=True)
